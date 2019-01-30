@@ -6,14 +6,15 @@ use App\Http\Controllers\Controller;
 use Socialite;
 use Exception;
 use Auth;
+
 use Illuminate\Http\Request;
 
-class FacebookController extends Controller
+class TwitterController extends Controller
 {
     //
-    public function redirectToFacebook()
+    public function redirectToTwiiter()
     {
-        return Socialite::driver('facebook')->redirect();
+        return Socialite::driver('twitter')->redirect();
     }
 
 
@@ -22,17 +23,17 @@ class FacebookController extends Controller
      *
      * @return void
      */
-    public function handleFacebookCallback()
+    public function handleTwitterCallback()
     {
         try {
-            $user = Socialite::driver('facebook')->user();
+            $user = Socialite::driver('twitter')->user();
             $create['name'] = $user->getName();
             $create['email'] = $user->getEmail();
-            $create['facebook_id'] = $user->getId();
+            $create['twitter_id'] = $user->getId();
 
 
             $userModel = new User;
-            $createdUser = $userModel->facebook($create);
+            $createdUser = $userModel->twitter($create);
             Auth::loginUsingId($createdUser->id);
 
 
@@ -42,7 +43,7 @@ class FacebookController extends Controller
         } catch (Exception $e) {
 
 
-            return redirect('auth/facebook');
+            return redirect('auth/twitter');
 
 
         }

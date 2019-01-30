@@ -6,14 +6,16 @@ use App\Http\Controllers\Controller;
 use Socialite;
 use Exception;
 use Auth;
+
 use Illuminate\Http\Request;
 
-class FacebookController extends Controller
+class GithubController extends Controller
 {
     //
-    public function redirectToFacebook()
+
+    public function redirectToGithub()
     {
-        return Socialite::driver('facebook')->redirect();
+        return Socialite::driver('github')->redirect();
     }
 
 
@@ -22,17 +24,17 @@ class FacebookController extends Controller
      *
      * @return void
      */
-    public function handleFacebookCallback()
+    public function handleGithubCallback()
     {
         try {
-            $user = Socialite::driver('facebook')->user();
+            $user = Socialite::driver('github')->user();
             $create['name'] = $user->getName();
             $create['email'] = $user->getEmail();
-            $create['facebook_id'] = $user->getId();
+            $create['github_id'] = $user->getId();
 
 
             $userModel = new User;
-            $createdUser = $userModel->facebook($create);
+            $createdUser = $userModel->github($create);
             Auth::loginUsingId($createdUser->id);
 
 

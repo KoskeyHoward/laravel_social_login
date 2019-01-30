@@ -6,14 +6,16 @@ use App\Http\Controllers\Controller;
 use Socialite;
 use Exception;
 use Auth;
+
 use Illuminate\Http\Request;
 
-class FacebookController extends Controller
+class LinkedinController extends Controller
 {
     //
-    public function redirectToFacebook()
+
+    public function redirectToLinkedin()
     {
-        return Socialite::driver('facebook')->redirect();
+        return Socialite::driver('linkedin')->redirect();
     }
 
 
@@ -22,17 +24,17 @@ class FacebookController extends Controller
      *
      * @return void
      */
-    public function handleFacebookCallback()
+    public function handleLinkedinCallback()
     {
         try {
-            $user = Socialite::driver('facebook')->user();
+            $user = Socialite::driver('linkedin')->user();
             $create['name'] = $user->getName();
             $create['email'] = $user->getEmail();
-            $create['facebook_id'] = $user->getId();
+            $create['linkedin_id'] = $user->getId();
 
 
             $userModel = new User;
-            $createdUser = $userModel->facebook($create);
+            $createdUser = $userModel->linkedin($create);
             Auth::loginUsingId($createdUser->id);
 
 
@@ -42,7 +44,7 @@ class FacebookController extends Controller
         } catch (Exception $e) {
 
 
-            return redirect('auth/facebook');
+            return redirect('auth/linkedin');
 
 
         }

@@ -14,3 +14,22 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+
+Route::get('auth/facebook', 'FacebookController@redirectToFacebook');
+Route::get('auth/facebook/callback', 'FacebookController@handleFacebookCallback');
+
+Route::get('auth/twiiter', 'TwitterController@redirectToTwiiter');
+Route::get('auth/twiiter/callback', 'TwitterController@handleTwitterCallback');
+
+Route::get('auth/github', 'GithubController@redirectToGithub');
+Route::get('auth/github/callback', 'GithubController@handleGithubCallback');
+
+Route::get('auth/linkedin', 'LinkedinController@redirectToLinkedin');
+Route::get('auth/linkedin/callback', 'LinkedinController@handleLinkedinCallback');
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
