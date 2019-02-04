@@ -67,6 +67,16 @@
                               <a href="{{ url('auth/facebook') }}" class="btn btn-primary">Login with Facebook</a>
                             </div>
                         </div>
+                        <div class="form-group">
+                            <div class="col-md-8 col-md-offset-4">
+                              <a href="{{ url('auth/linkedin') }}" class="btn btn-primary">Login with Linkedin</a>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-8 col-md-offset-4">
+                              <a href="{{ url('auth/github') }}" class="btn btn-primary">Login with Github</a>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
