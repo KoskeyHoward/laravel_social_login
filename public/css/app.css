@@ -1,4 +1,63 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);/*!
+@import url(https://fonts.googleapis.com/css?family=Nunito);
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500);
+body {
+  background-color: #f4f4f4;
+  padding: 30px;
+}
+
+.linkedinBtn {
+  position: relative;
+  box-sizing: border-box;
+  height: 40px;
+  width: 240px;
+  background-color: #0B78B7;
+  vertical-align: center;
+  font: 500 14px/40px Roboto;
+  letter-spacing: 0.65px;
+  color: white;
+  padding-left: 58px;
+  border-radius: 2px;
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, .12);
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .24);
+  overflow: hidden;
+}
+
+.linkedinBtn:hover {
+  background-color: #0469A0;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, .12);
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, .24);
+}
+
+.linkedinBtn:active {
+  background-color: #066093;
+}
+
+.linkedinBtn a {
+	color: white;
+}
+
+.ico-wrapper {
+  position: absolute;
+  top: -2px;
+  left: -6px;
+  width: 48px;
+  height: 44px;
+  background-color: #0B78B7;
+  border: 2px solid #085B8C;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.ico {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 4px;
+}
+
+/*!
  * Bootstrap v4.1.2 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
  * Copyright 2011-2018 Twitter, Inc.
