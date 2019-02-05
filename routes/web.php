@@ -20,7 +20,7 @@ Route::get('/', function () {
 Route::get('auth/facebook', 'FacebookController@redirectToFacebook');
 Route::get('auth/facebook/callback', 'FacebookController@handleFacebookCallback');
 
-Route::get('auth/twiiter', 'TwitterController@redirectToTwiiter');
+Route::get('auth/twiiter', 'TwitterController@redirectToTwitter');
 Route::get('auth/twiiter/callback', 'TwitterController@handleTwitterCallback');
 
 Route::get('auth/github', 'GithubController@redirectToGithub');

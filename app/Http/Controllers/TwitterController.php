@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
 class TwitterController extends Controller
 {
     //
-    public function redirectToTwiiter()
+    public function redirectToTwitter()
     {
         return Socialite::driver('twitter')->redirect();
     }
